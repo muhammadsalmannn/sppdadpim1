@@ -1,0 +1,104 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Pangkat;
+use Illuminate\Http\Request;
+
+class PangkatController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('admin.pangkat.index', [
+            'pangkats' => Pangkat::get()->all()
+        ]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('admin.pangkat.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $validate = $request->validate([
+            'golongan' => 'required',
+            'ruang' => 'required',
+        ]);
+
+        Pangkat::create($validate);
+        return redirect('/pangkat')->with('success', 'Sukses Menambahkan!');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Pangkat  $pangkat
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Pangkat $pangkat)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Pangkat  $pangkat
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Pangkat $pangkat)
+    {
+        return view('admin.pangkat.edit', [
+            'pangkats' => Pangkat::find($pangkat)
+        ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Pangkat  $pangkat
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Pangkat $pangkat)
+    {
+        $rules = [
+            'golongan' => 'required',
+            'ruang' => 'required',
+        ];
+
+        $validate = $request->validate($rules);
+        Pangkat::where('id', $pangkat->id)->update($validate);
+        return redirect('/pangkat')->with('success', 'Sukses TerUpdate!');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Pangkat  $pangkat
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Pangkat $pangkat)
+    {
+        Pangkat::destroy($pangkat->id);
+
+        return redirect('/pangkat')->with('success', 'Sukses Terhapus!');
+    }
+}
