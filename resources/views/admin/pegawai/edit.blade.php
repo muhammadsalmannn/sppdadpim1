@@ -90,7 +90,7 @@
                         </div> --}}
                         <div class="d-flex justify-content-center">
                             <a href="{{ url()->previous() }}" class="btn btn-primary me-md-2">Kembali</a>
-                            <button type="submit" class="btn btn-success">Submit</button>
+                            <button type="submit" class="btn btn-success">Simpan</button>
                         </div>
                     </form>
                 </div>

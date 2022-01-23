@@ -109,10 +109,6 @@
         <div class="d-flex justify-content-center">
             <h2 class="h5">Nomor : {!! $surats[0]->nomor !!}</h2>
         </div>
-        <div class="d-flex justify-content-center">
-            <h2 class="h5"> Dasar: Persetujuan Telaahan Staf No. {{ $surats[0]->nomor }} Tanggal
-                {{ date('d-M-Y') }}</h2>
-        </div>
     </div>
     <br>
 
@@ -229,7 +225,7 @@
             <tr>
                 <td></td>
                 <td class="kirii"></td>
-                <td class="kirii" style="padding-top: -5">NIP : 196410121989101000</td>
+                <td class="kirii" style="padding-top: -5">NIP : 196410121989101004</td>
             </tr>
         </table>
     </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Jan 2022 pada 09.46
+-- Waktu pembuatan: 23 Jan 2022 pada 00.16
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.0.13
 
@@ -57,7 +57,7 @@ CREATE TABLE `jabatans` (
 INSERT INTO `jabatans` (`id`, `nama`, `created_at`, `updated_at`) VALUES
 (1, 'KEPALA BIRO ADMINISTRASI PIMPINAN', '2022-01-11 23:47:36', '2022-01-11 23:47:36'),
 (2, 'KEPALA BAGIAN MATERI DAN KOMUNIKASI PIMPINAN', '2022-01-11 23:47:36', '2022-01-11 23:47:36'),
-(3, 'KABAG PROTOKOL', '2022-01-11 23:47:36', '2022-01-11 23:47:36'),
+(3, 'KEPALA BAGIAN PROTOKOL', '2022-01-11 23:47:36', '2022-01-20 06:52:14'),
 (4, 'KEPALA BAGIAN PERENCANAAN DAN KEPEGAWAIAN SEKRETARIAT  DAERAH', '2022-01-11 23:47:36', '2022-01-11 23:47:36'),
 (5, 'KEPALA SUB BAGIAN TAMU', '2022-01-11 23:47:36', '2022-01-11 23:47:36'),
 (6, 'KEPALA SUB BAGIAN ACARA', '2022-01-11 23:47:36', '2022-01-11 23:47:36'),
@@ -102,7 +102,7 @@ CREATE TABLE `kendaraans` (
 --
 
 INSERT INTO `kendaraans` (`id`, `nama`, `created_at`, `updated_at`) VALUES
-(1, 'Dinas / Umum', '2022-01-11 23:47:38', '2022-01-11 23:47:38'),
+(1, 'Travel / Umum', '2022-01-11 23:47:38', '2022-01-17 06:33:57'),
 (2, 'Mobil Pribadi', '2022-01-11 23:47:38', '2022-01-11 23:47:38'),
 (3, 'Mobil Dinas', '2022-01-11 23:47:38', '2022-01-11 23:47:38'),
 (4, 'Kereta Rel Listrik', '2022-01-11 23:47:38', '2022-01-11 23:47:38'),
@@ -208,7 +208,15 @@ CREATE TABLE `pegawais` (
 --
 
 INSERT INTO `pegawais` (`id`, `pangkat_id`, `jabatan_id`, `pengikut_id`, `nama`, `nip`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, NULL, 'MUHAMMAD SALMAN', '081254759189', '2022-01-12 00:20:58', '2022-01-12 00:20:58');
+(11, 8, 27, NULL, 'HARRY SURYA AFRIANTO', '197604172008011013', '2022-01-20 23:41:43', '2022-01-20 23:41:43'),
+(26, 10, 19, NULL, 'SYAID SYAIFUL ANWAR', '196509031990101001', '2022-01-21 00:33:59', '2022-01-21 00:33:59'),
+(31, 12, 15, NULL, 'M. HUSENI LABIB  S.H.', '197901182009011001', '2022-01-21 02:36:38', '2022-01-21 02:37:00'),
+(33, 12, 13, NULL, 'ERNI YUSNITA S.Sos.', '197406132007012015', '2022-01-21 02:38:00', '2022-01-21 02:38:00'),
+(37, 12, 9, NULL, 'ASTUTI DARMA S.E.', '196806271988082001', '2022-01-21 02:40:38', '2022-01-21 02:40:38'),
+(38, 12, 8, NULL, 'MURNI S.Sos.', '196504041988112004', '2022-01-21 02:45:45', '2022-01-21 02:45:45'),
+(39, 14, 3, NULL, 'SYARIFAH  ALAWIYAH S.Sos, M.Si.', '197108081991032007', '2022-01-21 02:46:14', '2022-01-21 02:46:14'),
+(40, 14, 2, NULL, 'Drs. ANDIK RIYANTO M.Si.', '196404181987031002', '2022-01-21 02:46:37', '2022-01-21 02:46:37'),
+(41, 14, 1, NULL, 'Drs. MUHAMMAD SYAFRANUDDIN M.M', '196410121989101004', '2022-01-21 02:47:02', '2022-01-21 02:47:02');
 
 -- --------------------------------------------------------
 
@@ -233,7 +241,8 @@ CREATE TABLE `perjalanans` (
 --
 
 INSERT INTO `perjalanans` (`id`, `kendaraan_id`, `lama_perjalanan`, `tempat_berangkat`, `tempat_tujuan`, `tanggal_berangkat`, `tanggal_kembali`, `created_at`, `updated_at`) VALUES
-(1, 1, '3', 'Samarinda', 'Bandung', '2022-01-12', '2022-01-14', '2022-01-12 00:21:19', '2022-01-12 00:21:19');
+(5, 6, '3', 'Samarinda', 'Bandung', '2022-01-03', '2022-01-06', '2022-01-21 02:48:21', '2022-01-21 02:48:21'),
+(6, 1, '2', 'Samarinda', 'Balikpapan', '2022-01-21', '2022-01-23', '2022-01-21 02:49:55', '2022-01-21 02:49:55');
 
 -- --------------------------------------------------------
 
@@ -275,7 +284,8 @@ CREATE TABLE `surats` (
 --
 
 INSERT INTO `surats` (`id`, `user_id`, `pegawai_id`, `perjalanan_id`, `nomor`, `uraian`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 1, '090.1/123/B.Adpim-II', '<div><strong>salman</strong></div>', '2022-01-12 00:21:40', '2022-01-12 00:21:40');
+(6, 1, 11, 5, '090.1/123/B.Adpim-II', '<div>Menemani Kepala Biro untuk Kunjungan HUT BANDUNG</div>', '2022-01-21 02:51:48', '2022-01-21 02:51:48'),
+(7, 1, 39, 6, '090.1/133/B.Adpim-II', '<div>Pelatihan Keprotokolan di Hotel Aston Bersama Protokol Walikota Balikpapan</div>', '2022-01-21 02:53:26', '2022-01-21 02:53:26');
 
 -- --------------------------------------------------------
 
@@ -300,11 +310,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `is_admin`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Biro Administrasi Pimpinan', 'admin.adpim@gmail.com', '2022-01-11 23:47:34', '$2y$10$ndv8RHc8gqLZN752T9zWFuTYpNob./XNcYH8YODAuR/Q57D2ECJPG', 1, 'mhqCxGEyYd', '2022-01-11 23:47:34', '2022-01-11 23:47:34'),
+(1, 'Biro Administrasi Pimpinan', 'admin.adpim@gmail.com', '2022-01-11 23:47:34', '$2y$10$ndv8RHc8gqLZN752T9zWFuTYpNob./XNcYH8YODAuR/Q57D2ECJPG', 1, '0RW91XTBclQqaV7sFv7wWmcVfYUDoHRqd6bfU2CGcBc6gu38QDyKF62AOTQG', '2022-01-11 23:47:34', '2022-01-11 23:47:34'),
 (2, 'Mrs. Ariane Crist', 'prosacco.tremaine@example.com', '2022-01-11 23:47:36', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0, 'P3MNly5Li8', '2022-01-11 23:47:36', '2022-01-11 23:47:36'),
 (3, 'Margie Towne', 'olaf46@example.com', '2022-01-11 23:47:36', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0, 'VmbruL4EAz', '2022-01-11 23:47:36', '2022-01-11 23:47:36'),
 (4, 'Luciano Kassulke', 'jamar45@example.net', '2022-01-11 23:47:36', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0, 'bYzj3v6wKF', '2022-01-11 23:47:36', '2022-01-11 23:47:36'),
-(5, 'Prof. Maxwell Altenwerth Sr.', 'bogan.kristina@example.org', '2022-01-11 23:47:36', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0, 'FWTYcFcCCA', '2022-01-11 23:47:36', '2022-01-11 23:47:36');
+(5, 'Prof. Maxwell Altenwerth Sr.', 'bogan.kristina@example.org', '2022-01-11 23:47:36', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0, 'FWTYcFcCCA', '2022-01-11 23:47:36', '2022-01-11 23:47:36'),
+(6, 'Muhammad Salman', 'mhmmdsalman69@gmail.com', NULL, '$2y$10$sLFFUOaucnM5PvrA/dGBYOyBLmkRxsuVfmeZEOoniA6CBnydiKQ8y', 0, NULL, '2022-01-20 19:07:54', '2022-01-20 19:07:54');
 
 --
 -- Indexes for dumped tables
@@ -419,13 +430,13 @@ ALTER TABLE `pangkats`
 -- AUTO_INCREMENT untuk tabel `pegawais`
 --
 ALTER TABLE `pegawais`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT untuk tabel `perjalanans`
 --
 ALTER TABLE `perjalanans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `personal_access_tokens`
@@ -437,13 +448,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT untuk tabel `surats`
 --
 ALTER TABLE `surats`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

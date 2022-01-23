@@ -2,7 +2,7 @@
 
 @section('container')
     <div class="container container-fluid mb-3 d-flex justify-content-center">
-        <h2 class="h3 text-uppercase">Create Data</h2>
+        <h2 class="h3 text-uppercase">Membuat Data Baru</h2>
     </div>
     <div class="container container-fluid d-flex justify-content-center">
         <div class="col-md-8 ">
@@ -43,7 +43,7 @@
                         </div>
                         <div class="d-flex justify-content-center">
                             <a href="{{ url()->previous() }}" class="btn btn-primary me-md-2">Kembali</a>
-                            <button type="submit" class="btn btn-success">Submit</button>
+                            <button type="submit" class="btn btn-success">Simpan</button>
                         </div>
                     </form>
                 </div>
